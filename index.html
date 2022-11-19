@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dist/output.css">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <title>Akash Das | portfolio site</title>
+</head>
+
+<body x-data="{openMenu:false}" :class="openMenu?'overflow-hidden':'overflow-visible'">
+    <div class="container mx-auto bg-slate-100 p-3 h-fit ">
+        <a name="home"></a>
+
+        <!-- heading as navbar -->
+
+        <div class="flex justify-between mx-auto ">
+            <button class="md:hidden p-3 rounded bg-purple-500 z-2" @click="openMenu = !openMenu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+            </button>
+            <div
+                class="hidden md:flex gap-2 xl:gap-9 lg:gap-6 md:gap-4 md:px-3 place-items-center mx-auto bg-slate-300 md:text-xl text-md shadow-xl shadow-slate-400 md:rounded-full rounded lg:px-5">
+                <a href="#home" class="hover:translate-y-1 transition ease-in-out duration-400n text-green-500">Home</a>
+                <a href="#about-me" class="hover:translate-y-1 transition ease-in-out duration-400 text-purple-700 hover:text-teal-500">About</a>
+                <a href="#portfolio"
+                    class="hover:translate-y-1 transition ease-in-out duration-400 text-purple-700 hover:text-teal-500">portfolio</a>
+                <a href="#contact"
+                    class="hover:translate-y-1 transition ease-in-out duration-400 text-purple-700 hover:text-teal-500">Contact</a>
+            </div>
+            <a href="#home"
+                class="text-purple-700 text-2xl md:text-5xl p-1 hover:text-teal-700 hover:scale-95 transition ease-in-out duration-400  ">AK.Co</a>
+        </div>
+
+        <!--popup nav-->
+
+        <nav class="fixed md:hidden top-0 left-0 right-0 bottom-0 backdrop-blur-lg z-10" :hidden="!openMenu">
+            <ul class="flex flex-col absolute top-0 right-0 bottom-0 w-10/12 bg-purple-500 shadow-xl p-5 z-10 text-white ">
+                <li class="border-b border-inherit py-5 p-5 text-center hover:text-black hover:bg-green-100 transition ease-in-out duration-600">
+                    <a href="#home" class="block text-2xl" @click="openMenu = !openMenu">Home</a>
+                </li>
+                <li class="border-b border-inherit py-5 p-5 text-center hover:text-black hover:bg-green-100 transition ease-in-out duration-600">
+                    <a href="#about-me" class="block text-2xl" @click="openMenu = !openMenu">About Me</a>
+                </li>
+                <li class="border-b border-inherit py-5 p-5 text-center hover:text-black hover:bg-green-100 transition ease-in-out duration-600">
+                    <a href="#portfolio" class="block text-2xl " @click="openMenu = !openMenu">Portfolio</a>
+                </li>
+                <li class="border-b border-inherit py-5 p-5 text-center hover:text-black hover:bg-green-100 transition ease-in-out duration-600">
+                    <a href="#contact" class="block text-2xl" @click="openMenu = !openMenu">Contact Me</a>
+                </li>
+            </ul>
+
+            <button class="absolute top-0 left-0 right-0 bottom-0 p-5 text-white" @click="openMenu = !openMenu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute w-6 h-6 m-5 top-1 left-1 bg-purple-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>                  
+            </button>
+        </nav>
+
+        <!-- hero section -->
+
+        <div
+            class="grid grid-cols-1 my-3 mb-12 md:my-12 lg:my-16 lg:mb-36 h-fit p-1 md:p-9 place-items-center lg:grid-cols-2 bg-slate-300 shadow-2xl rounded-2xl ">
+            <div class="flex flex-col py-9 ">
+                <h1 class="text-2xl md:text-5xl lg:text-6xl text-purple-800 ">Full stack Developer</h1>
+                <p class="text-md md:text-2xl text-purple-600 py-0.5 md:py-3">Hello. I am Akash Das. I am a <span class="text-black">full stack web developer</span> and <span class="text-black">learner</span>.</p>
+                <button 
+                    class="text-white text-lg md:text-md shadow-xl p-1 md:p-2 w-fit bg-purple-600 shadow-purple-400 rounded hover:scale-90 transition ease-in-out duration-400 "><a href="#about-me">more about me</a></button>
+            </div>
+            <img src="./src/hero.png" alt="hero" class="py-5 box-content">
+        </div>
+
+        <!-- about section -->
+        <a name="about-me"></a>
+        <div class=" flex flex-col place-items-center h-fit shadow-2xl shadow-slate-400 bg-slate-300 rounded-xl" >
+            <h1 class="text-2xl md:text-4xl lg:text-5xl text-purple-800 place-item-center pt-3 md:mb-2">About Me</h1>
+            <div
+                class="flex flex-col place-items-center pt-2 md:pt-10 lg:pt-6 px-2 md:px-16 pb-9 bg-slate-300 text-purple-600 text-md md:text-xl shadow-2xl">
+                <p class="">Lorem ipsum dolor sit
+                    ametconsectetur adipisicing
+                    elit. Sit est,
+                    delectus
+                    repellat esse
+                    facilis aperiam
+                    fuga deserunt neque molestiae quidem debitis libero beatae quis eum itaque explicabo odio alias,
+                    quibusdam, totam in! Eveniet dicta iste, eum fugit earum ut. Quidem nam obcaecati, delectus
+                    necessitatibus, impedit facilis quaerat alias, nemo sunt quos asperiores eaque qui ullam! Enim,
+                    voluptates ullam accusantium cumque rem quisquam iusto iste et incidunt. Quas veniam, tempore ut
+                    molestias, voluptates beatae officiis quia consequatur, eveniet expedita quam adipisci sequi unde
+                    dolore
+                    </p>
+                <button 
+                    class="text-white text-lg md:text-2xl shadow-lg shadow-purple-500 p-1 md:p-2 mt-3 w-fit bg-purple-700 rounded hover:scale-90 transition ease-in-out duration-400 "><a href="./Akash das(CV).pdf" download>download cv</a> 
+                    </button>
+            </div>
+
+            <!-- usedTec -->
+
+            <div class="bg-slate-200 rounded-6xl p-6 rounded-b-2xl w-full flex flex-col place-items-center">
+                <h1 class="text-purple-800 text-2xl md:text-3xl lg:text-4xl mb-8">Techstack That I Use</h1>
+                <div
+                    class="p-2 md:p-4 w-full grid gap-2 mx-auto grid-cols-4 md:grid-cols-6 lg:grid-cols-12 shadow-xl rounded-xl bg-slate-300">
+                    <img class="justify-center" src='./src/html.png' alt='html' />
+                    <img class='justify-center' src='./src/css.png' alt='css' />
+                    <img class='justify-center' src='./src/javascript.png' alt='js' />
+                    <img class='justify-center' src='./src/react.png' alt='react' />
+                    <img class='justify-center' src='./src/typescript.png' alt='typescript' />
+                    <img class='justify-center' src='./src/sass.png' alt='sass' />
+                    <img class='justify-center' src='./src/tailwindcss.png' alt='tailwindcss' />
+                    <img class='justify-center' src='./src/bootstrap.png' alt='bootstarp' />
+                    <img class='justify-center' src='./src/node.png' alt='node' />
+                    <img class='justify-center' src='./src/express.png' alt='express' />
+                    <img class='justify-center' src='./src/mysql.png' alt='typescript' />
+                    <img class='justify-center' src='./src/mongodb.png' alt='mongodb' />
+                </div>
+            </div>
+        </div>
+
+        <!--social contact-->
+
+        <div class="relative">
+            <ul>
+                    <li class="rounded-full w-8 md:w-10 fixed bottom-60 right-1 hover:translate-y-1 transition ease-in-out duration-500 shadow-2xl"><a href="https://www.facebook.com/profile.php?id=100028346620432" target='_blank'><img src="./src/facebook.png" alt="facebook" /></a></li>
+                    <li class="rounded-full w-8 md:w-10 fixed bottom-40 right-1 hover:translate-y-1 transition ease-in-out duration-500"><a href="https://github.com/akashdas95" target='_blank'><img src="./src/github.png" alt="github" /></a></li>
+                    <li class="rounded-full w-8 md:w-10 fixed bottom-20 right-1 hover:translate-y-1 transition ease-in-out duration-500"><a href="https://www.linkedin.com/in/akash-das-a17893205/" target='_blank'><img src="./src/linkedin.png" alt="linkedin" /></a></li>
+            </ul>
+        </div>
+
+        <!--contact me-->
+
+        <a name="contact"></a>
+        <div class= "bg-slate-300 m-1 mt-6 md:mt-12 lg:mt-36 rounded-xl p-2 md:p-9 w-full flex flex-col place-items-center shadow-2xl shadow-slate-400">
+            <div class="flex flex-col w-full md:w-96 lg:w-1/2 h-fit bg-slate-200 rounded-lg p-3 shadow-2xl shadow-slate-400 hover:translate-y-2 hover:cursor-pointer transition ease-in-out duration-500">
+               <h1 class=" text-purple-800 text-2xl md:text-3xl lg:text-4xl mb-5 ">Contact With Me</h1>
+               <div class="flex flex-col">
+                   <input type="text" placeholder="Enter your name" class="my-3 p-3 bg-green-100">
+                   <input type="email" placeholder="Enter your email" class="my-3 p-3 bg-green-100">
+                   <textarea name="" id="" placeholder="Write Your Queries" cols="25" rows="8" class="my-3 p-3 bg-green-100"></textarea>
+                   <button class="text-white text-lg md:text-2xl shadow-lg shadow-purple-500 p-1 md:p-2 my-3 w-fit bg-purple-700 rounded hover:scale-90 transition ease-in-out duration-400">Submit Here</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
